@@ -29,52 +29,52 @@ namespace SageReportsApp.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.splitMain = new System.Windows.Forms.SplitContainer();
             this.tableLayoutMenu = new System.Windows.Forms.TableLayoutPanel();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabMain = new System.Windows.Forms.TabControl();
             this.reportRegisters = new System.Windows.Forms.TabPage();
             this.dataGridRegisters = new System.Windows.Forms.DataGridView();
             this.reportDocuments = new System.Windows.Forms.TabPage();
+            this.dataGridDocuments = new System.Windows.Forms.DataGridView();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.plikToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.zamknijToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ustawieniaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.relatedFirmsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sourceSystemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dataGridDocuments = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
-            this.tabControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitMain)).BeginInit();
+            this.splitMain.Panel1.SuspendLayout();
+            this.splitMain.Panel2.SuspendLayout();
+            this.splitMain.SuspendLayout();
+            this.tabMain.SuspendLayout();
             this.reportRegisters.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridRegisters)).BeginInit();
             this.reportDocuments.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridDocuments)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // splitContainer1
+            // splitMain
             // 
-            this.splitContainer1.Cursor = System.Windows.Forms.Cursors.HSplit;
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
-            this.splitContainer1.IsSplitterFixed = true;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 28);
-            this.splitContainer1.Name = "splitContainer1";
-            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            this.splitMain.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.splitMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitMain.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
+            this.splitMain.IsSplitterFixed = true;
+            this.splitMain.Location = new System.Drawing.Point(0, 28);
+            this.splitMain.Name = "splitMain";
+            this.splitMain.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
-            // splitContainer1.Panel1
+            // splitMain.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.tableLayoutMenu);
+            this.splitMain.Panel1.Controls.Add(this.tableLayoutMenu);
             // 
-            // splitContainer1.Panel2
+            // splitMain.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.tabControl1);
-            this.splitContainer1.Size = new System.Drawing.Size(969, 532);
-            this.splitContainer1.SplitterDistance = 56;
-            this.splitContainer1.SplitterWidth = 1;
-            this.splitContainer1.TabIndex = 0;
+            this.splitMain.Panel2.Controls.Add(this.tabMain);
+            this.splitMain.Size = new System.Drawing.Size(969, 532);
+            this.splitMain.SplitterDistance = 56;
+            this.splitMain.SplitterWidth = 1;
+            this.splitMain.TabIndex = 0;
             // 
             // tableLayoutMenu
             // 
@@ -92,16 +92,16 @@ namespace SageReportsApp.Forms
             this.tableLayoutMenu.Size = new System.Drawing.Size(969, 56);
             this.tableLayoutMenu.TabIndex = 0;
             // 
-            // tabControl1
+            // tabMain
             // 
-            this.tabControl1.Controls.Add(this.reportRegisters);
-            this.tabControl1.Controls.Add(this.reportDocuments);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(969, 475);
-            this.tabControl1.TabIndex = 0;
+            this.tabMain.Controls.Add(this.reportRegisters);
+            this.tabMain.Controls.Add(this.reportDocuments);
+            this.tabMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabMain.Location = new System.Drawing.Point(0, 0);
+            this.tabMain.Name = "tabMain";
+            this.tabMain.SelectedIndex = 0;
+            this.tabMain.Size = new System.Drawing.Size(969, 475);
+            this.tabMain.TabIndex = 0;
             // 
             // reportRegisters
             // 
@@ -139,6 +139,21 @@ namespace SageReportsApp.Forms
             this.reportDocuments.TabIndex = 1;
             this.reportDocuments.Text = "Powiązane dokumenty";
             this.reportDocuments.UseVisualStyleBackColor = true;
+            // 
+            // dataGridDocuments
+            // 
+            this.dataGridDocuments.AllowUserToAddRows = false;
+            this.dataGridDocuments.AllowUserToDeleteRows = false;
+            this.dataGridDocuments.AllowUserToOrderColumns = true;
+            this.dataGridDocuments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridDocuments.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridDocuments.Location = new System.Drawing.Point(3, 3);
+            this.dataGridDocuments.Name = "dataGridDocuments";
+            this.dataGridDocuments.ReadOnly = true;
+            this.dataGridDocuments.RowHeadersWidth = 51;
+            this.dataGridDocuments.RowTemplate.Height = 29;
+            this.dataGridDocuments.Size = new System.Drawing.Size(955, 436);
+            this.dataGridDocuments.TabIndex = 0;
             // 
             // menuStrip1
             // 
@@ -190,42 +205,27 @@ namespace SageReportsApp.Forms
             this.sourceSystemToolStripMenuItem.Text = "System źródłowy";
             this.sourceSystemToolStripMenuItem.Click += new System.EventHandler(this.sourceSystemToolStripMenuItem_Click);
             // 
-            // dataGridDocuments
-            // 
-            this.dataGridDocuments.AllowUserToAddRows = false;
-            this.dataGridDocuments.AllowUserToDeleteRows = false;
-            this.dataGridDocuments.AllowUserToOrderColumns = true;
-            this.dataGridDocuments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridDocuments.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridDocuments.Location = new System.Drawing.Point(3, 3);
-            this.dataGridDocuments.Name = "dataGridDocuments";
-            this.dataGridDocuments.ReadOnly = true;
-            this.dataGridDocuments.RowHeadersWidth = 51;
-            this.dataGridDocuments.RowTemplate.Height = 29;
-            this.dataGridDocuments.Size = new System.Drawing.Size(955, 436);
-            this.dataGridDocuments.TabIndex = 0;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(969, 560);
-            this.Controls.Add(this.splitContainer1);
+            this.Controls.Add(this.splitMain);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
             this.Text = "AJK Sage Reports";
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
-            this.tabControl1.ResumeLayout(false);
+            this.splitMain.Panel1.ResumeLayout(false);
+            this.splitMain.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitMain)).EndInit();
+            this.splitMain.ResumeLayout(false);
+            this.tabMain.ResumeLayout(false);
             this.reportRegisters.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridRegisters)).EndInit();
             this.reportDocuments.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridDocuments)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridDocuments)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -233,12 +233,12 @@ namespace SageReportsApp.Forms
 
         #endregion
 
-        private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.SplitContainer splitMain;
         private System.Windows.Forms.TableLayoutPanel tableLayoutMenu;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem plikToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem zamknijToolStripMenuItem;
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl tabMain;
         private System.Windows.Forms.TabPage reportRegisters;
         private System.Windows.Forms.TabPage reportDocuments;
         private System.Windows.Forms.ToolStripMenuItem ustawieniaToolStripMenuItem;

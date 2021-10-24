@@ -33,7 +33,7 @@ namespace SageReportsApp.Forms
 
         private void sourceSystemToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SetSourceSystems setSourceSystems = new();
+            SetSourceSystems setSourceSystems = new(_db);
             setSourceSystems.Show();
         }
     }
