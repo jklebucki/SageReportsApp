@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SageReportsApp.Models
+﻿namespace SageReportsApp.Models
 {
     public class SageVatRegister
     {
