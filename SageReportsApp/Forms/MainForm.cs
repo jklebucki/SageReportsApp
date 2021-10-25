@@ -25,7 +25,6 @@ namespace SageReportsApp.Forms
         private void InitializeComboSource()
         {
             comboSource.SelectedIndexChanged += ComboSource_SelectedIndexChanged;
-            comboSource.Items.Clear();
             comboSource.SelectedItem = null;
             comboSource.Text = "";
             comboSource.DisplayMember = "Description";
@@ -41,14 +40,15 @@ namespace SageReportsApp.Forms
         private void ComboSource_SelectedIndexChanged(object sender, EventArgs e)
         {
             var source = (SourceSystem)comboSource.SelectedItem;
-            if (comboSource.Items.Count > 0)
-            {
-                selectedSource = _db.SourceSystems.FirstOrDefault(s => s.SourceSystemId == source.SourceSystemId);
-            }
-            else
-            {
-                selectedSource = null;
-            }
+            if (source != null)
+                if (comboSource.Items.Count > 0)
+                {
+                    selectedSource = _db.SourceSystems.FirstOrDefault(s => s.SourceSystemId == source.SourceSystemId);
+                }
+                else
+                {
+                    selectedSource = null;
+                }
         }
 
         private void zamknijToolStripMenuItem_Click(object sender, EventArgs e)
@@ -74,25 +74,37 @@ namespace SageReportsApp.Forms
             InitializeComboSource();
         }
 
-        private void buttonReadData_Click(object sender, EventArgs e)
+        private async void buttonReadData_Click(object sender, EventArgs e)
         {
             if (selectedSource != null)
             {
-                var source = (SourceSystem)comboSource.SelectedItem;
-                SageDataService sageDataService = new SageDataService(
-                    $"Server={source.Address};" +
-                    $"Database={source.DbName};" +
-                    $"User id={source.Username};" +
-                    $"Password={source.Password};");
-                var salesData = sageDataService.GetVatRegisterData(2, int.Parse(textBoxYear.Text));
-                var purchaseData = sageDataService.GetVatRegisterData(1, int.Parse(textBoxYear.Text));
-                dataGridPurchase.DataSource = purchaseData;
-                dataGridSale.DataSource = salesData;
+                try
+                {
+                    var source = (SourceSystem)comboSource.SelectedItem;
+                    SageDataService sageDataService = new SageDataService(
+                        $"Server={source.Address};" +
+                        $"Database={source.DbName};" +
+                        $"User id={source.Username};" +
+                        $"Password={source.Password};");
+                    var salesData = await sageDataService.GetVatRegisterDataAsync(2, int.Parse(textBoxYear.Text));
+                    var purchaseData = await sageDataService.GetVatRegisterDataAsync(1, int.Parse(textBoxYear.Text));
+                    dataGridPurchase.DataSource = purchaseData;
+                    dataGridSale.DataSource = salesData;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(
+                        ex.InnerException != null ? ex.InnerException.Message : ex.Message,
+                        "Info",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                }
             }
             else
             {
                 MessageBox.Show(this, "Wybierz źródło i poprawnie wpisz rok", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+
         }
     }
 }

@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.IO;
+using System.Threading.Tasks;
 
 namespace SageReportsApp.Services
 {
@@ -56,6 +57,33 @@ namespace SageReportsApp.Services
 
         }
 
+        public async Task<List<SageVatRegister>> GetVatRegisterDataAsync(int registerType, int year)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(_connectionString))
+                {
+                    using (SqlCommand command = new SqlCommand(PrepareQueryString(registerType, year), connection))
+                    {
+                        command.Connection.Open();
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+
+                            var dt = new DataTable();
+                            dt.Load(reader);
+                            return await Task.FromResult(ConvertDatatableToList(dt));
+                        }
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.InnerException != null ? ex.InnerException.Message : ex.Message);
+            }
+
+        }
+
         private List<SageVatRegister> ConvertDatatableToList(DataTable dataTable)
         {
             var vatRegisters = new List<SageVatRegister>();
@@ -65,7 +93,8 @@ namespace SageReportsApp.Services
                 {
                     RegisterName = row.ItemArray[3].ToString(),
                     DocumentShortcut = row.ItemArray[4].ToString(),
-                    DocumentNumber = row.ItemArray[8].ToString()
+                    DocumentNumber = row.ItemArray[8].ToString(),
+                    DocumentDate = (DateTime)row.ItemArray[9],
                 });
             }
             return vatRegisters;
