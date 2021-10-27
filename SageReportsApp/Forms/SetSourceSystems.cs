@@ -18,6 +18,7 @@ namespace SageReportsApp.Forms
         private void SetSourceSystems_Load(object sender, EventArgs e)
         {
             dataGridSourceSystems.DataSource = _db.SourceSystems.ToList();
+            dataGridSourceSystems.Columns[0].Visible = false;
             dataGridSourceSystems.Columns[6].Visible = false;
             dataGridSourceSystems.Columns[7].Visible = false;
         }
@@ -32,6 +33,7 @@ namespace SageReportsApp.Forms
             {
                 AddSourceSystem(SetSourceSystem());
             }
+            SetSourceSystems_Load(null, null);
         }
 
         private void AddSourceSystem(SourceSystem sourceSystem)
@@ -124,6 +126,11 @@ namespace SageReportsApp.Forms
         private void dataGridSourceSystems_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
             FillSourceSystemData();
+        }
+
+        private void buttonExit_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

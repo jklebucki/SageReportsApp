@@ -29,6 +29,8 @@ namespace SageReportsApp.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitSourceSystems = new System.Windows.Forms.SplitContainer();
             this.tableLayoutSourceSystems = new System.Windows.Forms.TableLayoutPanel();
             this.labelDescription = new System.Windows.Forms.Label();
@@ -62,6 +64,7 @@ namespace SageReportsApp.Forms
             this.splitSourceSystems.Cursor = System.Windows.Forms.Cursors.HSplit;
             this.splitSourceSystems.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitSourceSystems.Location = new System.Drawing.Point(0, 0);
+            this.splitSourceSystems.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.splitSourceSystems.Name = "splitSourceSystems";
             this.splitSourceSystems.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -72,8 +75,9 @@ namespace SageReportsApp.Forms
             // splitSourceSystems.Panel2
             // 
             this.splitSourceSystems.Panel2.Controls.Add(this.dataGridSourceSystems);
-            this.splitSourceSystems.Size = new System.Drawing.Size(800, 450);
-            this.splitSourceSystems.SplitterDistance = 189;
+            this.splitSourceSystems.Size = new System.Drawing.Size(700, 338);
+            this.splitSourceSystems.SplitterDistance = 140;
+            this.splitSourceSystems.SplitterWidth = 3;
             this.splitSourceSystems.TabIndex = 0;
             // 
             // tableLayoutSourceSystems
@@ -102,6 +106,7 @@ namespace SageReportsApp.Forms
             this.tableLayoutSourceSystems.Controls.Add(this.buttonRemove, 3, 2);
             this.tableLayoutSourceSystems.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutSourceSystems.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutSourceSystems.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tableLayoutSourceSystems.Name = "tableLayoutSourceSystems";
             this.tableLayoutSourceSystems.RowCount = 5;
             this.tableLayoutSourceSystems.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
@@ -109,17 +114,17 @@ namespace SageReportsApp.Forms
             this.tableLayoutSourceSystems.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutSourceSystems.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutSourceSystems.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutSourceSystems.Size = new System.Drawing.Size(800, 189);
+            this.tableLayoutSourceSystems.Size = new System.Drawing.Size(700, 140);
             this.tableLayoutSourceSystems.TabIndex = 0;
             // 
             // labelDescription
             // 
             this.labelDescription.AutoSize = true;
             this.labelDescription.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelDescription.Location = new System.Drawing.Point(5, 5);
-            this.labelDescription.Margin = new System.Windows.Forms.Padding(5);
+            this.labelDescription.Location = new System.Drawing.Point(4, 4);
+            this.labelDescription.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.labelDescription.Name = "labelDescription";
-            this.labelDescription.Size = new System.Drawing.Size(139, 27);
+            this.labelDescription.Size = new System.Drawing.Size(122, 20);
             this.labelDescription.TabIndex = 0;
             this.labelDescription.Text = "Opis";
             // 
@@ -127,10 +132,10 @@ namespace SageReportsApp.Forms
             // 
             this.labelCode.AutoSize = true;
             this.labelCode.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelCode.Location = new System.Drawing.Point(5, 42);
-            this.labelCode.Margin = new System.Windows.Forms.Padding(5);
+            this.labelCode.Location = new System.Drawing.Point(4, 32);
+            this.labelCode.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.labelCode.Name = "labelCode";
-            this.labelCode.Size = new System.Drawing.Size(139, 27);
+            this.labelCode.Size = new System.Drawing.Size(122, 20);
             this.labelCode.TabIndex = 1;
             this.labelCode.Text = "Skrót";
             // 
@@ -138,10 +143,10 @@ namespace SageReportsApp.Forms
             // 
             this.labelType.AutoSize = true;
             this.labelType.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelType.Location = new System.Drawing.Point(5, 79);
-            this.labelType.Margin = new System.Windows.Forms.Padding(5);
+            this.labelType.Location = new System.Drawing.Point(4, 60);
+            this.labelType.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.labelType.Name = "labelType";
-            this.labelType.Size = new System.Drawing.Size(139, 27);
+            this.labelType.Size = new System.Drawing.Size(122, 20);
             this.labelType.TabIndex = 2;
             this.labelType.Text = "Typ";
             // 
@@ -149,10 +154,10 @@ namespace SageReportsApp.Forms
             // 
             this.labelAddress.AutoSize = true;
             this.labelAddress.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelAddress.Location = new System.Drawing.Point(5, 116);
-            this.labelAddress.Margin = new System.Windows.Forms.Padding(5);
+            this.labelAddress.Location = new System.Drawing.Point(4, 88);
+            this.labelAddress.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.labelAddress.Name = "labelAddress";
-            this.labelAddress.Size = new System.Drawing.Size(139, 27);
+            this.labelAddress.Size = new System.Drawing.Size(122, 20);
             this.labelAddress.TabIndex = 3;
             this.labelAddress.Text = "Adres";
             // 
@@ -160,10 +165,10 @@ namespace SageReportsApp.Forms
             // 
             this.labelDbName.AutoSize = true;
             this.labelDbName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelDbName.Location = new System.Drawing.Point(5, 153);
-            this.labelDbName.Margin = new System.Windows.Forms.Padding(5);
+            this.labelDbName.Location = new System.Drawing.Point(4, 116);
+            this.labelDbName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.labelDbName.Name = "labelDbName";
-            this.labelDbName.Size = new System.Drawing.Size(139, 31);
+            this.labelDbName.Size = new System.Drawing.Size(122, 20);
             this.labelDbName.TabIndex = 4;
             this.labelDbName.Text = "Nazwa żródła (db)";
             // 
@@ -171,10 +176,10 @@ namespace SageReportsApp.Forms
             // 
             this.labelUsername.AutoSize = true;
             this.labelUsername.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelUsername.Location = new System.Drawing.Point(375, 5);
-            this.labelUsername.Margin = new System.Windows.Forms.Padding(5);
+            this.labelUsername.Location = new System.Drawing.Point(327, 4);
+            this.labelUsername.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.labelUsername.Name = "labelUsername";
-            this.labelUsername.Size = new System.Drawing.Size(166, 27);
+            this.labelUsername.Size = new System.Drawing.Size(146, 20);
             this.labelUsername.TabIndex = 5;
             this.labelUsername.Text = "Użytkownik";
             // 
@@ -182,76 +187,84 @@ namespace SageReportsApp.Forms
             // 
             this.labelPassword.AutoSize = true;
             this.labelPassword.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelPassword.Location = new System.Drawing.Point(375, 42);
-            this.labelPassword.Margin = new System.Windows.Forms.Padding(5);
+            this.labelPassword.Location = new System.Drawing.Point(327, 32);
+            this.labelPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.labelPassword.Name = "labelPassword";
-            this.labelPassword.Size = new System.Drawing.Size(166, 27);
+            this.labelPassword.Size = new System.Drawing.Size(146, 20);
             this.labelPassword.TabIndex = 6;
             this.labelPassword.Text = "Hasło";
             // 
             // textBoxDesciption
             // 
             this.textBoxDesciption.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxDesciption.Location = new System.Drawing.Point(152, 3);
+            this.textBoxDesciption.Location = new System.Drawing.Point(133, 2);
+            this.textBoxDesciption.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxDesciption.Name = "textBoxDesciption";
-            this.textBoxDesciption.Size = new System.Drawing.Size(215, 27);
+            this.textBoxDesciption.Size = new System.Drawing.Size(187, 23);
             this.textBoxDesciption.TabIndex = 7;
             // 
             // textBoxCode
             // 
             this.textBoxCode.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxCode.Location = new System.Drawing.Point(152, 40);
+            this.textBoxCode.Location = new System.Drawing.Point(133, 30);
+            this.textBoxCode.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxCode.Name = "textBoxCode";
-            this.textBoxCode.Size = new System.Drawing.Size(215, 27);
+            this.textBoxCode.Size = new System.Drawing.Size(187, 23);
             this.textBoxCode.TabIndex = 8;
             // 
             // textBoxType
             // 
             this.textBoxType.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxType.Location = new System.Drawing.Point(152, 77);
+            this.textBoxType.Location = new System.Drawing.Point(133, 58);
+            this.textBoxType.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxType.Name = "textBoxType";
-            this.textBoxType.Size = new System.Drawing.Size(215, 27);
+            this.textBoxType.Size = new System.Drawing.Size(187, 23);
             this.textBoxType.TabIndex = 9;
             // 
             // textBoxAddress
             // 
             this.textBoxAddress.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxAddress.Location = new System.Drawing.Point(152, 114);
+            this.textBoxAddress.Location = new System.Drawing.Point(133, 86);
+            this.textBoxAddress.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxAddress.Name = "textBoxAddress";
-            this.textBoxAddress.Size = new System.Drawing.Size(215, 27);
+            this.textBoxAddress.Size = new System.Drawing.Size(187, 23);
             this.textBoxAddress.TabIndex = 10;
             // 
             // textBoxDbName
             // 
             this.textBoxDbName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxDbName.Location = new System.Drawing.Point(152, 151);
+            this.textBoxDbName.Location = new System.Drawing.Point(133, 114);
+            this.textBoxDbName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxDbName.Name = "textBoxDbName";
-            this.textBoxDbName.Size = new System.Drawing.Size(215, 27);
+            this.textBoxDbName.Size = new System.Drawing.Size(187, 23);
             this.textBoxDbName.TabIndex = 11;
             // 
             // textBoxUsername
             // 
             this.textBoxUsername.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxUsername.Location = new System.Drawing.Point(549, 3);
+            this.textBoxUsername.Location = new System.Drawing.Point(480, 2);
+            this.textBoxUsername.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxUsername.Name = "textBoxUsername";
-            this.textBoxUsername.Size = new System.Drawing.Size(248, 27);
+            this.textBoxUsername.Size = new System.Drawing.Size(217, 23);
             this.textBoxUsername.TabIndex = 12;
             // 
             // textBoxPassword
             // 
             this.textBoxPassword.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxPassword.Location = new System.Drawing.Point(549, 40);
+            this.textBoxPassword.Location = new System.Drawing.Point(480, 30);
+            this.textBoxPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.PasswordChar = '*';
-            this.textBoxPassword.Size = new System.Drawing.Size(248, 27);
+            this.textBoxPassword.Size = new System.Drawing.Size(217, 23);
             this.textBoxPassword.TabIndex = 13;
             // 
             // buttonSave
             // 
             this.buttonSave.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonSave.Location = new System.Drawing.Point(549, 114);
+            this.buttonSave.Location = new System.Drawing.Point(480, 86);
+            this.buttonSave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(248, 31);
+            this.buttonSave.Size = new System.Drawing.Size(217, 24);
             this.buttonSave.TabIndex = 14;
             this.buttonSave.Text = "Zapisz";
             this.buttonSave.UseVisualStyleBackColor = true;
@@ -260,19 +273,22 @@ namespace SageReportsApp.Forms
             // buttonExit
             // 
             this.buttonExit.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonExit.Location = new System.Drawing.Point(549, 151);
+            this.buttonExit.Location = new System.Drawing.Point(480, 114);
+            this.buttonExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonExit.Name = "buttonExit";
-            this.buttonExit.Size = new System.Drawing.Size(248, 35);
+            this.buttonExit.Size = new System.Drawing.Size(217, 24);
             this.buttonExit.TabIndex = 15;
             this.buttonExit.Text = "Wyjdź";
             this.buttonExit.UseVisualStyleBackColor = true;
+            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
             // 
             // buttonRemove
             // 
             this.buttonRemove.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonRemove.Location = new System.Drawing.Point(549, 77);
+            this.buttonRemove.Location = new System.Drawing.Point(480, 58);
+            this.buttonRemove.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonRemove.Name = "buttonRemove";
-            this.buttonRemove.Size = new System.Drawing.Size(248, 31);
+            this.buttonRemove.Size = new System.Drawing.Size(217, 24);
             this.buttonRemove.TabIndex = 16;
             this.buttonRemove.Text = "Usuń";
             this.buttonRemove.UseVisualStyleBackColor = true;
@@ -283,23 +299,41 @@ namespace SageReportsApp.Forms
             this.dataGridSourceSystems.AllowUserToAddRows = false;
             this.dataGridSourceSystems.AllowUserToDeleteRows = false;
             this.dataGridSourceSystems.AllowUserToOrderColumns = true;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridSourceSystems.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridSourceSystems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridSourceSystems.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridSourceSystems.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridSourceSystems.Location = new System.Drawing.Point(0, 0);
+            this.dataGridSourceSystems.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridSourceSystems.Name = "dataGridSourceSystems";
             this.dataGridSourceSystems.ReadOnly = true;
             this.dataGridSourceSystems.RowHeadersWidth = 51;
             this.dataGridSourceSystems.RowTemplate.Height = 29;
-            this.dataGridSourceSystems.Size = new System.Drawing.Size(800, 257);
+            this.dataGridSourceSystems.Size = new System.Drawing.Size(700, 195);
             this.dataGridSourceSystems.TabIndex = 0;
             this.dataGridSourceSystems.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridSourceSystems_RowEnter);
             // 
             // SetSourceSystems
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(700, 338);
             this.Controls.Add(this.splitSourceSystems);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "SetSourceSystems";
             this.Text = "Systemy źródłowe";
             this.Load += new System.EventHandler(this.SetSourceSystems_Load);

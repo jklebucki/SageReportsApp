@@ -66,12 +66,12 @@ namespace SageReportsApp.Services
                     using (SqlCommand command = new SqlCommand(PrepareQueryString(registerType, year), connection))
                     {
                         command.Connection.Open();
-                        using (SqlDataReader reader = command.ExecuteReader())
+                        using (SqlDataReader reader = await command.ExecuteReaderAsync())
                         {
 
                             var dt = new DataTable();
                             dt.Load(reader);
-                            return await Task.FromResult(ConvertDatatableToList(dt));
+                            return ConvertDatatableToList(dt);
                         }
 
                     }
@@ -95,6 +95,9 @@ namespace SageReportsApp.Services
                     DocumentShortcut = row.ItemArray[4].ToString(),
                     DocumentNumber = row.ItemArray[8].ToString(),
                     DocumentDate = (DateTime)row.ItemArray[9],
+                    Net = decimal.Parse(row.ItemArray[16].ToString()),
+                    Vat = decimal.Parse(row.ItemArray[17].ToString()),
+                    Gross = decimal.Parse(row.ItemArray[18].ToString())
                 });
             }
             return vatRegisters;

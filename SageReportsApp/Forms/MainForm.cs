@@ -1,8 +1,13 @@
-﻿using SageReportsApp.Data;
+﻿using NPOI.SS.UserModel;
+using NPOI.XSSF.UserModel;
+using SageReportsApp.Data;
 using SageReportsApp.Models;
 using SageReportsApp.Services;
 using System;
+using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace SageReportsApp.Forms
@@ -11,6 +16,8 @@ namespace SageReportsApp.Forms
     {
         private readonly AppDbContext _db;
         private SourceSystem selectedSource;
+        private List<SageVatRegister> vatRegisterSale { get; set; }
+        private List<SageVatRegister> vatRegisterPurchase { get; set; }
         public MainForm()
         {
             _db = new AppDbContext();
@@ -76,7 +83,7 @@ namespace SageReportsApp.Forms
 
         private async void buttonReadData_Click(object sender, EventArgs e)
         {
-            if (selectedSource != null)
+            if (selectedSource != null && textBoxYear.Text.Length == 4 && int.Parse(textBoxYear.Text) > 2010)
             {
                 try
                 {
@@ -86,10 +93,10 @@ namespace SageReportsApp.Forms
                         $"Database={source.DbName};" +
                         $"User id={source.Username};" +
                         $"Password={source.Password};");
-                    var salesData = await sageDataService.GetVatRegisterDataAsync(2, int.Parse(textBoxYear.Text));
-                    var purchaseData = await sageDataService.GetVatRegisterDataAsync(1, int.Parse(textBoxYear.Text));
-                    dataGridPurchase.DataSource = purchaseData;
-                    dataGridSale.DataSource = salesData;
+                    vatRegisterSale = await sageDataService.GetVatRegisterDataAsync(2, int.Parse(textBoxYear.Text));
+                    dataGridSale.DataSource = vatRegisterSale;
+                    vatRegisterPurchase = await sageDataService.GetVatRegisterDataAsync(1, int.Parse(textBoxYear.Text));
+                    dataGridPurchase.DataSource = vatRegisterPurchase;
                 }
                 catch (Exception ex)
                 {
@@ -105,6 +112,47 @@ namespace SageReportsApp.Forms
                 MessageBox.Show(this, "Wybierz źródło i poprawnie wpisz rok", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
+        }
+
+        private void textBoxYear_TextChanged(object sender, EventArgs e)
+        {
+            textBoxYear.Text = Regex.Replace(textBoxYear.Text, @"[^\d]", "");
+        }
+
+        private void buttonExportToExcel_Click(object sender, EventArgs e)
+        {
+            var filePath = SaveExcelFile();
+            if (filePath != string.Empty)
+            {
+                IWorkbook workbook = new XSSFWorkbook();
+                ExportToExcelService exportToExcelService = new ExportToExcelService();
+                exportToExcelService.AddSheetToWorkbook(workbook, vatRegisterSale, "Sprzedaż");
+                exportToExcelService.AddSheetToWorkbook(workbook, vatRegisterPurchase, "Zakup");
+                using (var fs = File.Create(filePath))
+                {
+                    workbook.Write(fs);
+                }
+            }
+
+        }
+
+        private string SaveExcelFile()
+        {
+            SaveFileDialog saveFile = new SaveFileDialog();
+
+            saveFile.Filter = "xlsx files (*.xlsx)|*.xlsx";
+            saveFile.FilterIndex = 1;
+            saveFile.RestoreDirectory = true;
+            saveFile.FileName = "PodmioryPowiazane.xlsx";
+
+            if (saveFile.ShowDialog() == DialogResult.OK)
+            {
+                return saveFile.FileName;
+            }
+            else
+            {
+                return string.Empty;
+            }
         }
     }
 }
