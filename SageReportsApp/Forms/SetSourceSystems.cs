@@ -1,4 +1,5 @@
-﻿using SageReportsApp.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using SageReportsApp.Data;
 using SageReportsApp.Models;
 using System;
 using System.Linq;
@@ -17,7 +18,12 @@ namespace SageReportsApp.Forms
 
         private void SetSourceSystems_Load(object sender, EventArgs e)
         {
-            dataGridSourceSystems.DataSource = _db.SourceSystems.ToList();
+            SetDataGrid();
+        }
+
+        private async void SetDataGrid()
+        {
+            dataGridSourceSystems.DataSource = await _db.SourceSystems.ToListAsync();
             dataGridSourceSystems.Columns[0].Visible = false;
             dataGridSourceSystems.Columns[6].Visible = false;
             dataGridSourceSystems.Columns[7].Visible = false;
@@ -33,14 +39,14 @@ namespace SageReportsApp.Forms
             {
                 AddSourceSystem(SetSourceSystem());
             }
-            SetSourceSystems_Load(null, null);
+            SetDataGrid();
         }
 
-        private void AddSourceSystem(SourceSystem sourceSystem)
+        private async void AddSourceSystem(SourceSystem sourceSystem)
         {
             sourceSystem.SourceSystemId = 0;
-            _db.SourceSystems.Add(sourceSystem);
-            _db.SaveChanges();
+            await _db.SourceSystems.AddAsync(sourceSystem);
+            await _db.SaveChangesAsync();
         }
 
         private SourceSystem SetSourceSystem()
@@ -93,7 +99,7 @@ namespace SageReportsApp.Forms
                 return null;
         }
 
-        private void UpdateSourceSystem(SourceSystem sourceSystem)
+        private async void UpdateSourceSystem(SourceSystem sourceSystem)
         {
             if (sourceSystem != null)
             {
@@ -106,21 +112,21 @@ namespace SageReportsApp.Forms
                 sourceSystemToUpdate.Username = sourceSystem.Username;
                 sourceSystemToUpdate.Password = sourceSystem.Password;
                 _db.Entry(sourceSystemToUpdate).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
-                _db.SaveChanges();
-                SetSourceSystems_Load(null, null);
+                await _db.SaveChangesAsync();
+                SetDataGrid();
             }
         }
 
-        private void buttonRemove_Click(object sender, EventArgs e)
+        private async void buttonRemove_Click(object sender, EventArgs e)
         {
             var selectedSourceSystem = GetSourceSystem();
             if (selectedSourceSystem != null)
             {
                 var sourceSystemToRemove = _db.SourceSystems.FirstOrDefault(s => s.SourceSystemId == selectedSourceSystem.SourceSystemId);
                 _db.SourceSystems.Remove(sourceSystemToRemove);
-                _db.SaveChanges();
+                await _db.SaveChangesAsync();
             }
-            SetSourceSystems_Load(null, null);
+            SetDataGrid();
         }
 
         private void dataGridSourceSystems_RowEnter(object sender, DataGridViewCellEventArgs e)

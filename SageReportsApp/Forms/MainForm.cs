@@ -88,7 +88,7 @@ namespace SageReportsApp.Forms
                 try
                 {
                     var source = (SourceSystem)comboSource.SelectedItem;
-                    SageDataService sageDataService = new SageDataService(
+                    SageDataService sageDataService = new(
                         $"Server={source.Address};" +
                         $"Database={source.DbName};" +
                         $"User id={source.Username};" +
@@ -125,20 +125,17 @@ namespace SageReportsApp.Forms
             if (filePath != string.Empty)
             {
                 IWorkbook workbook = new XSSFWorkbook();
-                ExportToExcelService exportToExcelService = new ExportToExcelService();
-                exportToExcelService.AddSheetToWorkbook(workbook, vatRegisterSale, "Sprzedaż");
-                exportToExcelService.AddSheetToWorkbook(workbook, vatRegisterPurchase, "Zakup");
-                using (var fs = File.Create(filePath))
-                {
-                    workbook.Write(fs);
-                }
+                ExportToExcelService.AddSheetToWorkbook(workbook, vatRegisterSale, "Sprzedaż");
+                ExportToExcelService.AddSheetToWorkbook(workbook, vatRegisterPurchase, "Zakup");
+                using var fs = File.Create(filePath);
+                workbook.Write(fs);
             }
 
         }
 
-        private string SaveExcelFile()
+        private static string SaveExcelFile()
         {
-            SaveFileDialog saveFile = new SaveFileDialog();
+            SaveFileDialog saveFile = new();
 
             saveFile.Filter = "xlsx files (*.xlsx)|*.xlsx";
             saveFile.FilterIndex = 1;

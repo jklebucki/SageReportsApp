@@ -76,7 +76,7 @@ namespace SageReportsApp.Forms
             // 
             this.splitSourceSystems.Panel2.Controls.Add(this.dataGridSourceSystems);
             this.splitSourceSystems.Size = new System.Drawing.Size(700, 338);
-            this.splitSourceSystems.SplitterDistance = 140;
+            this.splitSourceSystems.SplitterDistance = 139;
             this.splitSourceSystems.SplitterWidth = 3;
             this.splitSourceSystems.TabIndex = 0;
             // 
@@ -114,7 +114,7 @@ namespace SageReportsApp.Forms
             this.tableLayoutSourceSystems.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutSourceSystems.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutSourceSystems.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutSourceSystems.Size = new System.Drawing.Size(700, 140);
+            this.tableLayoutSourceSystems.Size = new System.Drawing.Size(700, 139);
             this.tableLayoutSourceSystems.TabIndex = 0;
             // 
             // labelDescription
@@ -122,9 +122,9 @@ namespace SageReportsApp.Forms
             this.labelDescription.AutoSize = true;
             this.labelDescription.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelDescription.Location = new System.Drawing.Point(4, 4);
-            this.labelDescription.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.labelDescription.Margin = new System.Windows.Forms.Padding(4);
             this.labelDescription.Name = "labelDescription";
-            this.labelDescription.Size = new System.Drawing.Size(122, 20);
+            this.labelDescription.Size = new System.Drawing.Size(122, 19);
             this.labelDescription.TabIndex = 0;
             this.labelDescription.Text = "Opis";
             // 
@@ -132,10 +132,10 @@ namespace SageReportsApp.Forms
             // 
             this.labelCode.AutoSize = true;
             this.labelCode.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelCode.Location = new System.Drawing.Point(4, 32);
-            this.labelCode.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.labelCode.Location = new System.Drawing.Point(4, 31);
+            this.labelCode.Margin = new System.Windows.Forms.Padding(4);
             this.labelCode.Name = "labelCode";
-            this.labelCode.Size = new System.Drawing.Size(122, 20);
+            this.labelCode.Size = new System.Drawing.Size(122, 19);
             this.labelCode.TabIndex = 1;
             this.labelCode.Text = "Skrót";
             // 
@@ -143,10 +143,10 @@ namespace SageReportsApp.Forms
             // 
             this.labelType.AutoSize = true;
             this.labelType.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelType.Location = new System.Drawing.Point(4, 60);
-            this.labelType.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.labelType.Location = new System.Drawing.Point(4, 58);
+            this.labelType.Margin = new System.Windows.Forms.Padding(4);
             this.labelType.Name = "labelType";
-            this.labelType.Size = new System.Drawing.Size(122, 20);
+            this.labelType.Size = new System.Drawing.Size(122, 19);
             this.labelType.TabIndex = 2;
             this.labelType.Text = "Typ";
             // 
@@ -154,10 +154,10 @@ namespace SageReportsApp.Forms
             // 
             this.labelAddress.AutoSize = true;
             this.labelAddress.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelAddress.Location = new System.Drawing.Point(4, 88);
-            this.labelAddress.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.labelAddress.Location = new System.Drawing.Point(4, 85);
+            this.labelAddress.Margin = new System.Windows.Forms.Padding(4);
             this.labelAddress.Name = "labelAddress";
-            this.labelAddress.Size = new System.Drawing.Size(122, 20);
+            this.labelAddress.Size = new System.Drawing.Size(122, 19);
             this.labelAddress.TabIndex = 3;
             this.labelAddress.Text = "Adres";
             // 
@@ -165,10 +165,10 @@ namespace SageReportsApp.Forms
             // 
             this.labelDbName.AutoSize = true;
             this.labelDbName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelDbName.Location = new System.Drawing.Point(4, 116);
-            this.labelDbName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.labelDbName.Location = new System.Drawing.Point(4, 112);
+            this.labelDbName.Margin = new System.Windows.Forms.Padding(4);
             this.labelDbName.Name = "labelDbName";
-            this.labelDbName.Size = new System.Drawing.Size(122, 20);
+            this.labelDbName.Size = new System.Drawing.Size(122, 23);
             this.labelDbName.TabIndex = 4;
             this.labelDbName.Text = "Nazwa żródła (db)";
             // 
@@ -177,9 +177,9 @@ namespace SageReportsApp.Forms
             this.labelUsername.AutoSize = true;
             this.labelUsername.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelUsername.Location = new System.Drawing.Point(327, 4);
-            this.labelUsername.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.labelUsername.Margin = new System.Windows.Forms.Padding(4);
             this.labelUsername.Name = "labelUsername";
-            this.labelUsername.Size = new System.Drawing.Size(146, 20);
+            this.labelUsername.Size = new System.Drawing.Size(146, 19);
             this.labelUsername.TabIndex = 5;
             this.labelUsername.Text = "Użytkownik";
             // 
@@ -187,10 +187,10 @@ namespace SageReportsApp.Forms
             // 
             this.labelPassword.AutoSize = true;
             this.labelPassword.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelPassword.Location = new System.Drawing.Point(327, 32);
-            this.labelPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.labelPassword.Location = new System.Drawing.Point(327, 31);
+            this.labelPassword.Margin = new System.Windows.Forms.Padding(4);
             this.labelPassword.Name = "labelPassword";
-            this.labelPassword.Size = new System.Drawing.Size(146, 20);
+            this.labelPassword.Size = new System.Drawing.Size(146, 19);
             this.labelPassword.TabIndex = 6;
             this.labelPassword.Text = "Hasło";
             // 
@@ -206,7 +206,7 @@ namespace SageReportsApp.Forms
             // textBoxCode
             // 
             this.textBoxCode.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxCode.Location = new System.Drawing.Point(133, 30);
+            this.textBoxCode.Location = new System.Drawing.Point(133, 29);
             this.textBoxCode.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxCode.Name = "textBoxCode";
             this.textBoxCode.Size = new System.Drawing.Size(187, 23);
@@ -215,7 +215,7 @@ namespace SageReportsApp.Forms
             // textBoxType
             // 
             this.textBoxType.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxType.Location = new System.Drawing.Point(133, 58);
+            this.textBoxType.Location = new System.Drawing.Point(133, 56);
             this.textBoxType.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxType.Name = "textBoxType";
             this.textBoxType.Size = new System.Drawing.Size(187, 23);
@@ -224,7 +224,7 @@ namespace SageReportsApp.Forms
             // textBoxAddress
             // 
             this.textBoxAddress.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxAddress.Location = new System.Drawing.Point(133, 86);
+            this.textBoxAddress.Location = new System.Drawing.Point(133, 83);
             this.textBoxAddress.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxAddress.Name = "textBoxAddress";
             this.textBoxAddress.Size = new System.Drawing.Size(187, 23);
@@ -233,7 +233,7 @@ namespace SageReportsApp.Forms
             // textBoxDbName
             // 
             this.textBoxDbName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxDbName.Location = new System.Drawing.Point(133, 114);
+            this.textBoxDbName.Location = new System.Drawing.Point(133, 110);
             this.textBoxDbName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxDbName.Name = "textBoxDbName";
             this.textBoxDbName.Size = new System.Drawing.Size(187, 23);
@@ -251,7 +251,7 @@ namespace SageReportsApp.Forms
             // textBoxPassword
             // 
             this.textBoxPassword.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxPassword.Location = new System.Drawing.Point(480, 30);
+            this.textBoxPassword.Location = new System.Drawing.Point(480, 29);
             this.textBoxPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.PasswordChar = '*';
@@ -261,10 +261,10 @@ namespace SageReportsApp.Forms
             // buttonSave
             // 
             this.buttonSave.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonSave.Location = new System.Drawing.Point(480, 86);
+            this.buttonSave.Location = new System.Drawing.Point(480, 83);
             this.buttonSave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(217, 24);
+            this.buttonSave.Size = new System.Drawing.Size(217, 23);
             this.buttonSave.TabIndex = 14;
             this.buttonSave.Text = "Zapisz";
             this.buttonSave.UseVisualStyleBackColor = true;
@@ -273,10 +273,10 @@ namespace SageReportsApp.Forms
             // buttonExit
             // 
             this.buttonExit.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonExit.Location = new System.Drawing.Point(480, 114);
+            this.buttonExit.Location = new System.Drawing.Point(480, 110);
             this.buttonExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonExit.Name = "buttonExit";
-            this.buttonExit.Size = new System.Drawing.Size(217, 24);
+            this.buttonExit.Size = new System.Drawing.Size(217, 27);
             this.buttonExit.TabIndex = 15;
             this.buttonExit.Text = "Wyjdź";
             this.buttonExit.UseVisualStyleBackColor = true;
@@ -285,10 +285,10 @@ namespace SageReportsApp.Forms
             // buttonRemove
             // 
             this.buttonRemove.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonRemove.Location = new System.Drawing.Point(480, 58);
+            this.buttonRemove.Location = new System.Drawing.Point(480, 56);
             this.buttonRemove.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonRemove.Name = "buttonRemove";
-            this.buttonRemove.Size = new System.Drawing.Size(217, 24);
+            this.buttonRemove.Size = new System.Drawing.Size(217, 23);
             this.buttonRemove.TabIndex = 16;
             this.buttonRemove.Text = "Usuń";
             this.buttonRemove.UseVisualStyleBackColor = true;
@@ -323,7 +323,7 @@ namespace SageReportsApp.Forms
             this.dataGridSourceSystems.ReadOnly = true;
             this.dataGridSourceSystems.RowHeadersWidth = 51;
             this.dataGridSourceSystems.RowTemplate.Height = 29;
-            this.dataGridSourceSystems.Size = new System.Drawing.Size(700, 195);
+            this.dataGridSourceSystems.Size = new System.Drawing.Size(700, 196);
             this.dataGridSourceSystems.TabIndex = 0;
             this.dataGridSourceSystems.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridSourceSystems_RowEnter);
             // 
@@ -335,6 +335,7 @@ namespace SageReportsApp.Forms
             this.Controls.Add(this.splitSourceSystems);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "SetSourceSystems";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Systemy źródłowe";
             this.Load += new System.EventHandler(this.SetSourceSystems_Load);
             this.splitSourceSystems.Panel1.ResumeLayout(false);

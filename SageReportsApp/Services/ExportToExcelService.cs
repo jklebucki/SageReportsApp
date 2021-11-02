@@ -13,7 +13,7 @@ namespace SageReportsApp.Services
 {
     public class ExportToExcelService
     {
-        public IWorkbook AddSheetToWorkbook<T>(IWorkbook workbook, List<T> data, string sheetName)
+        public static IWorkbook AddSheetToWorkbook<T>(IWorkbook workbook, List<T> data, string sheetName)
         {
             ISheet excelSheet = workbook.CreateSheet(sheetName);
             IRow row;
@@ -50,7 +50,11 @@ namespace SageReportsApp.Services
                         }
                         else if (type == typeof(DateTime))
                         {
-                            row.CreateCell(columnCounter).SetCellValue((DateTime)prop.GetValue(item, null));
+                            var val = prop.GetValue(item, null);
+                            if (val != null)
+                                row.CreateCell(columnCounter).SetCellValue((DateTime)val);
+                            else
+                                row.CreateCell(columnCounter);
                             var c = row.GetCell(columnCounter);
                             c.CellStyle = dateCellStyle;
                         }

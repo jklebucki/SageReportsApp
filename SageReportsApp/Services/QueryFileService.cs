@@ -9,7 +9,7 @@ namespace SageReportsApp.Services
         public static string ReadQueryFile(string filePath)
         {
             if (File.Exists(filePath))
-                using (StreamReader streamReader = new StreamReader(filePath, Encoding.UTF8))
+                using (StreamReader streamReader = new(filePath, Encoding.UTF8))
                 {
                     try
                     {
