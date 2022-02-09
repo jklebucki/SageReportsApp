@@ -92,7 +92,8 @@ namespace SageReportsApp.Forms
                         $"Server={source.Address};" +
                         $"Database={source.DbName};" +
                         $"User id={source.Username};" +
-                        $"Password={source.Password};");
+                        $"Password={source.Password};",
+                        _db);
                     vatRegisterSale = await sageDataService.GetVatRegisterDataAsync(2, int.Parse(textBoxYear.Text));
                     dataGridSale.DataSource = vatRegisterSale;
                     vatRegisterPurchase = await sageDataService.GetVatRegisterDataAsync(1, int.Parse(textBoxYear.Text));

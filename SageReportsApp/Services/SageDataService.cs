@@ -1,9 +1,11 @@
 ﻿using Microsoft.Data.SqlClient;
+using SageReportsApp.Data;
 using SageReportsApp.Models;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.IO;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace SageReportsApp.Services
@@ -11,18 +13,26 @@ namespace SageReportsApp.Services
     public class SageDataService
     {
         private readonly string _connectionString;
-        public SageDataService(string connectionString)
+        private readonly AppDbContext _appDbContext;
+        public SageDataService(string connectionString, AppDbContext appDbContext)
         {
             _connectionString = connectionString;
+            _appDbContext = appDbContext;
         }
 
-        private static string PrepareQueryString(int registerType, int year)
+        private string PrepareQueryString(int registerType, int year)
         {
             try
             {
                 var queryString = QueryFileService.ReadQueryFile(Path.Combine(Directory.GetCurrentDirectory(), "Queries", "SalesAndPurchase.sql"));
-
-                return queryString.Replace(":regType", registerType.ToString()).Replace(":year", year.ToString());
+                var relatedFirmsIds = _appDbContext.RelatedFirms
+                    .Where(r => !string.IsNullOrEmpty(r.ErpSystemId) && r.VatId == "1")
+                    .Select(f => f.ErpSystemId).Distinct()
+                    .ToArray();
+                return queryString
+                    .Replace(":regType", registerType.ToString())
+                    .Replace(":year", year.ToString())
+                    .Replace(":firms", string.Join(",", relatedFirmsIds));
             }
             catch (Exception ex)
             {

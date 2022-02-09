@@ -118,7 +118,7 @@ namespace SageReportsApp.Forms
             this.labelSource.AutoSize = true;
             this.labelSource.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelSource.Location = new System.Drawing.Point(4, 4);
-            this.labelSource.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.labelSource.Margin = new System.Windows.Forms.Padding(4);
             this.labelSource.Name = "labelSource";
             this.labelSource.Size = new System.Drawing.Size(228, 22);
             this.labelSource.TabIndex = 1;
@@ -129,7 +129,7 @@ namespace SageReportsApp.Forms
             this.labelYear.AutoSize = true;
             this.labelYear.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelYear.Location = new System.Drawing.Point(240, 4);
-            this.labelYear.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.labelYear.Margin = new System.Windows.Forms.Padding(4);
             this.labelYear.Name = "labelYear";
             this.labelYear.Size = new System.Drawing.Size(228, 22);
             this.labelYear.TabIndex = 2;
@@ -250,7 +250,7 @@ namespace SageReportsApp.Forms
             this.reportPurchase.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.reportPurchase.Name = "reportPurchase";
             this.reportPurchase.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.reportPurchase.Size = new System.Drawing.Size(939, 388);
+            this.reportPurchase.Size = new System.Drawing.Size(939, 361);
             this.reportPurchase.TabIndex = 1;
             this.reportPurchase.Text = "Zestawienie - zakup";
             this.reportPurchase.UseVisualStyleBackColor = true;
@@ -292,7 +292,7 @@ namespace SageReportsApp.Forms
             this.dataGridPurchase.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridPurchase.RowHeadersWidth = 51;
             this.dataGridPurchase.RowTemplate.Height = 29;
-            this.dataGridPurchase.Size = new System.Drawing.Size(933, 384);
+            this.dataGridPurchase.Size = new System.Drawing.Size(933, 357);
             this.dataGridPurchase.TabIndex = 0;
             // 
             // menuStrip1

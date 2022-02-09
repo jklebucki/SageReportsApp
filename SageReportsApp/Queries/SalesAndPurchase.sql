@@ -23,6 +23,6 @@ LEFT JOIN ( SELECT
 			dkh ON dkh.FkId = r.kontrahent
 WHERE ( (r.[def] = -2 AND 2=0) OR defRej.rZs = :regType) AND (1 <> 0 or r.[netto] <> 0) -- defRej.rZs = 1 zakup / defRej.rZs = 2 sprzedaż
 	AND d.dataOper between ':year-01-01' and ':year-12-31'  --( ( r.okres >= FROK.poczatek AND r.okres <= FROK.koniec) OR (d.[rokId] = 19))
-	and r.kontrahent in (2148,1914,9142,17275,1385,10711,10396,9166,17274,9373,10022,12801,12800,12961,16012,15435,15314,1365,17167,1013,17097,17320,42993,42992,47305,47235,14422,14423,14832,15117,38038,56627,9153,89427) 
+	and r.kontrahent in (:firms)--(2148,1914,9142,17275,1385,10711,10396,9166,17274,9373,10022,12801,12800,12961,16012,15435,15314,1365,17167,1013,17097,17320,42993,42992,47305,47235,14422,14423,14832,15117,38038,56627,9153,89427) 
 order by
 d.datadok	
