@@ -138,5 +138,10 @@ namespace SageReportsApp.Forms
         {
             Close();
         }
+
+        private void dataGridSourceSystems_SelectionChanged(object sender, EventArgs e)
+        {
+            FillSourceSystemData();
+        }
     }
 }

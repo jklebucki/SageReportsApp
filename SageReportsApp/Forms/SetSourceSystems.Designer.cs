@@ -326,6 +326,7 @@ namespace SageReportsApp.Forms
             this.dataGridSourceSystems.Size = new System.Drawing.Size(700, 196);
             this.dataGridSourceSystems.TabIndex = 0;
             this.dataGridSourceSystems.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridSourceSystems_RowEnter);
+            this.dataGridSourceSystems.SelectionChanged += new System.EventHandler(this.dataGridSourceSystems_SelectionChanged);
             // 
             // SetSourceSystems
             // 
