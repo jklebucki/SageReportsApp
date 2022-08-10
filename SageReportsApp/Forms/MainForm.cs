@@ -103,7 +103,7 @@ namespace SageReportsApp.Forms
                 {
                     MessageBox.Show(
                         ex.InnerException != null ? ex.InnerException.Message : ex.Message,
-                        "Info",
+                        "Błąd",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Error);
                 }
