@@ -2,8 +2,6 @@
 using SageReportsApp.Data;
 using SageReportsApp.Models;
 using System;
-using System.Data;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace SageReportsApp.Forms
