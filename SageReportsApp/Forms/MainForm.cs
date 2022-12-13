@@ -129,7 +129,7 @@ namespace SageReportsApp.Forms
                 ExportToExcelService.AddSheetToWorkbook(workbook, vatRegisterSale, "Sprzedaż");
                 ExportToExcelService.AddSheetToWorkbook(workbook, vatRegisterPurchase, "Zakup");
                 using var fs = File.Create(filePath);
-                workbook.Write(fs);
+                workbook.Write(fs,false);
             }
 
         }

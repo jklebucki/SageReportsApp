@@ -10,6 +10,8 @@ namespace SageReportsApp.Services
     {
         public static IWorkbook AddSheetToWorkbook<T>(IWorkbook workbook, List<T> data, string sheetName)
         {
+            if (data == null || workbook == null || string.IsNullOrEmpty(sheetName))
+                throw new Exception("Null parameters");
             ISheet excelSheet = workbook.CreateSheet(sheetName);
             IRow row;
             ICellStyle dateCellStyle = workbook.CreateCellStyle();
